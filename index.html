@@ -333,185 +333,6 @@
             visibility: visible;
         }
 
-        /* About Consultant */
-        .about-consultant {
-            background-color: white;
-        }
-
-        .consultant-profile {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .consultant-image-container {
-            width: 100%;
-            max-width: 420px;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-            transition: var(--transition);
-            border: 8px solid white;
-            aspect-ratio: 3/4;
-        }
-
-        .consultant-image-container:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        .consultant-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: var(--transition);
-        }
-
-        .consultant-image-container:hover .consultant-image {
-            transform: scale(1.05);
-        }
-
-        .consultant-details {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .consultant-name {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-            line-height: 1.2;
-            position: relative;
-            display: inline-block;
-        }
-
-        .consultant-name::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary);
-            border-radius: 2px;
-        }
-
-        .consultant-specialty {
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: block;
-            font-size: 1.3rem;
-        }
-
-        .consultant-bio {
-            margin-bottom: 2.5rem;
-            color: var(--text);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .consultant-bio p {
-            margin-bottom: 1.5rem;
-        }
-
-        /* Services Section */
-        .services {
-            background-color: var(--light);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            font-size: 2.5rem;
-            color: var(--dark);
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary), #f39c12);
-            margin: 1.5rem auto 0;
-            border-radius: 5px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            border-top: 5px solid var(--primary);
-            text-align: center;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), #f39c12);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-icon {
-            width: 100px;
-            height: 100px;
-            background-color: rgba(230, 126, 34, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            font-size: 2.5rem;
-            color: var(--accent);
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-icon {
-            background-color: rgba(230, 126, 34, 0.2);
-            transform: scale(1.1) rotate(10deg);
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .service-card p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
         /* Jualan Kita Section */
         .jualan-kita {
             background-color: white;
@@ -554,89 +375,211 @@
             left: 0;
         }
 
-        /* Video Gallery Section */
-        .video-gallery {
+        /* Testimonials */
+        .testimonials {
             background-color: var(--light);
-            padding: 6rem 0;
         }
 
-        .video-container {
+        .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
-            margin-top: 3rem;
         }
 
-        .video-card {
+        .testimonial-card {
             background: white;
             border-radius: var(--radius-lg);
-            overflow: hidden;
+            padding: 2.5rem;
             box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .video-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            border: none;
+            position: relative;
+            transition: var(--transition);
+            border-top: 5px solid rgba(230, 126, 34, 0.3);
         }
 
-        .video-info {
-            padding: 1.5rem;
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-top-color: var(--primary);
         }
 
-        .video-title {
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            padding: 0 1rem;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            color: var(--primary);
+            font-size: 2rem;
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .testimonial-text::before {
+            top: -10px;
+            left: -5px;
+        }
+
+        .testimonial-text::after {
+            bottom: -25px;
+            right: -5px;
+        }
+
+        .rating {
+            color: gold;
+            margin-bottom: 1.5rem;
             font-size: 1.3rem;
+            letter-spacing: 3px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(230, 126, 34, 0.2);
+            transition: var(--transition);
+            flex-shrink: 0;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .testimonial-card:hover .testimonial-avatar {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .author-info h4 {
+            font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--dark);
-            font-weight: 600;
+            font-size: 1.2rem;
         }
 
-        .video-desc {
+        .author-info p {
+            font-size: 0.95rem;
             color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.6;
         }
 
-        /* Testimonials Section */
-        .testimonials {
-            background-color: var(--light);
-            padding: 6rem 0;
+        /* Testimonial Form */
+        .testimonial-form-container {
+            max-width: 800px;
+            margin: 5rem auto 0;
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .testimonial-form-container h3 {
             text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: var(--dark);
+            position: relative;
         }
 
-        .testimonial-btn {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1.2rem 2.5rem;
+        .testimonial-form-container h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 4px;
+        }
+
+        .testimonial-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: var(--radius-sm);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            background-color: white;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
+        }
+
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
             background-color: var(--primary);
             color: white;
+            border: none;
             border-radius: 50px;
             font-weight: 600;
-            text-decoration: none;
+            font-size: 1.05rem;
+            cursor: pointer;
             transition: var(--transition);
-            box-shadow: var(--shadow-md);
+            margin-top: 1rem;
+            box-shadow: var(--shadow-sm);
         }
 
-        .testimonial-btn:hover {
+        .submit-btn:hover {
             background-color: var(--primary-dark);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
 
@@ -712,45 +655,6 @@
             font-size: 1.05rem;
         }
 
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--dark);
-            font-size: 1rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: var(--radius-sm);
-            font-family: 'Poppins', sans-serif;
-            transition: var(--transition);
-            background-color: white;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
-        }
-
         /* Footer */
         footer {
             background: linear-gradient(to bottom, var(--dark), var(--darker));
@@ -800,31 +704,6 @@
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.8;
             font-size: 1.05rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary);
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
         }
 
         .footer-col h3 {
@@ -988,12 +867,12 @@
                 font-size: 2rem;
             }
             
-            .consultant-name {
-                font-size: 2.2rem;
+            .testimonial-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
             
-            .services-grid, .video-container {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1023,20 +902,6 @@
             .section-title {
                 font-size: 1.8rem;
             }
-
-            .consultant-profile {
-                flex-direction: column;
-                text-align: center;
-                gap: 3rem;
-            }
-
-            .consultant-details {
-                text-align: left;
-            }
-
-            .consultant-name {
-                font-size: 2rem;
-            }
             
             .footer-col {
                 text-align: center;
@@ -1050,10 +915,6 @@
             .footer-col h3::after {
                 left: 50%;
                 transform: translateX(-50%);
-            }
-            
-            .social-links {
-                justify-content: center;
             }
             
             .whatsapp-float {
@@ -1070,6 +931,10 @@
                 font-size: 1.3rem;
                 bottom: 100px;
                 right: 30px;
+            }
+            
+            .testimonial-form-container {
+                padding: 2rem;
             }
         }
 
@@ -1101,15 +966,11 @@
                 margin-bottom: 3rem;
             }
             
-            .consultant-name {
-                font-size: 1.8rem;
-            }
-            
-            .service-card, .contact-info, .contact-form {
+            .testimonial-card, .contact-info, .contact-form, .testimonial-form-container {
                 padding: 1.5rem;
             }
             
-            .services-grid, .video-container {
+            .testimonial-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1176,10 +1037,8 @@
             
             <div class="nav-links">
                 <a href="#home" class="active">Beranda</a>
-                <a href="#about">Tentang</a>
-                <a href="#services">Layanan</a>
-                <a href="#videos">Video</a>
-                <a href="https://lenterakarya.github.io/testimoni/" target="_blank">Testimoni</a>
+                <a href="#jualankita">Jualan Kita</a>
+                <a href="#testimonials">Testimoni</a>
                 <a href="#contact">Kontak</a>
             </div>
             
@@ -1192,10 +1051,8 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#home">Beranda</a>
-        <a href="#about">Tentang Owner</a>
-        <a href="#services">Layanan</a>
-        <a href="#videos">Video</a>
-        <a href="https://lenterakarya.github.io/testimoni/" target="_blank">Testimoni</a>
+        <a href="#jualankita">Jualan Kita</a>
+        <a href="#testimonials">Testimoni</a>
         <a href="#contact">Kontak</a>
     </div>
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
@@ -1213,107 +1070,15 @@
             <p class="tagline fade-in">Panduan Profesional untuk Pengembangan UMKM di Platform Jualan Kita. Bersama kita wujudkan mimpi bisnis Anda dengan strategi yang tepat dan terukur.</p>
             
             <div class="header-buttons fade-in delay-1">
-                <a href="#services" class="btn btn-primary">
-                    <i class="fas fa-lightbulb"></i> Layanan Kami
+                <a href="#jualankita" class="btn btn-primary">
+                    <i class="fas fa-store"></i> Jelajahi Jualan Kita
                 </a>
                 <a href="#contact" class="btn btn-outline">
-                    <i class="fas fa-phone-alt"></i> Konsultasi Sekarang
+                    <i class="fas fa-phone-alt"></i> Hubungi Kami
                 </a>
             </div>
         </div>
     </header>
-    
-    <!-- About Consultant -->
-    <section class="about-consultant" id="about">
-        <div class="container">
-            <h2 class="section-title fade-in">Tentang Owner</h2>
-            <div class="consultant-profile">
-                <div class="consultant-image-container fade-in">
-                    <img src="https://raw.githubusercontent.com/LenteraKarya/bisnis/main/assets/images/foto-owner.jpeg" alt="Owner Jualan Kita" class="consultant-image">
-                </div>
-                <div class="consultant-details fade-in delay-1">
-                    <h3 class="consultant-name">CENDHANU</h3>
-                    <span class="consultant-specialty">Founder Marketplace Jualan Kita</span>
-                    <div class="consultant-bio">
-                        <p>Saya adalah seorang putra daerah kelahiran Situbondo, lulusan SMK IBRAHIMY SITUBONDO, yang kini berusia 36 tahun dan berprofesi sebagai tenaga honorer. Meski berlatar belakang pendidikan sederhana, saya memiliki mimpi besar: menjadi pengusaha yang tumbuh dari nol dan memberi manfaat seluas-luasnya bagi masyarakat.</p>
-                        <p>Berangkat dari visi tersebut, saya membangun Lentera Karya —sebuah platform digital yang dirancang sebagai wadah promosi, publikasi, dan jaringan bisnis bagi para pelaku UMKM, khususnya di Situbondo. Platform ini bukan hanya untuk usaha saya sendiri, tetapi terbuka bagi semua pengusaha kecil dan menengah yang ingin berkembang bersama.</p>
-                        <p>Saya terinspirasi oleh semangat dan slogan kepemimpinan Bupati Situbondo saat ini, Mas Rio: "Situbondo Naik Kelas." Inilah yang menjadi bahan bakar visi saya—mendorong UMKM lokal agar mampu naik kelas dan bersaing secara sehat dalam ekosistem digital yang inklusif dan berdaya saing.</p>
-                        <p>Saya percaya bahwa perubahan besar selalu dimulai dari langkah sederhana. Lentera Karya adalah langkah awal saya menuju cita-cita besar itu, dan saya berharap platform ini akan menjadi ruang kolaboratif yang mendukung pertumbuhan UMKM dari akar rumput hingga tingkat nasional.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title fade-in">Layanan Konsultasi</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <h3 class="service-title">Setup Toko Profesional</h3>
-                    <p>Bimbingan lengkap mulai dari pendaftaran, setup toko, hingga pengaturan pembayaran dan pengiriman di platform Jualan Kita untuk memastikan toko Anda tampil profesional sejak awal.</p>
-                </div>
-                <div class="service-card fade-in delay-1">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="service-title">Strategi Penjualan</h3>
-                    <p>Teknik meningkatkan penjualan melalui optimasi produk, pricing strategy yang kompetitif, dan promosi efektif di Jualan Kita untuk memaksimalkan keuntungan bisnis Anda.</p>
-                </div>
-                <div class="service-card fade-in delay-2">
-                    <div class="service-icon">
-                        <i class="fas fa-camera-retro"></i>
-                    </div>
-                    <h3 class="service-title">Optimasi Produk</h3>
-                    <p>Panduan fotografi produk profesional, penulisan deskripsi yang menjual, dan pengaturan katalog yang optimal untuk meningkatkan daya tarik produk Anda di Jualan Kita.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Video Gallery Section -->
-    <section class="video-gallery" id="videos">
-        <div class="container">
-            <h2 class="section-title fade-in">Video Tutorial</h2>
-            <p class="fade-in" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Tonton video tutorial kami untuk mempelajari cara memaksimalkan penggunaan platform Jualan Kita untuk bisnis Anda.</p>
-            
-            <div class="video-container">
-                <div class="video-card fade-in">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/SFn9-dx0Zko" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">Panduan Dasar Jualan Kita</h3>
-                        <p class="video-desc">Pelajari cara memulai toko online Anda di platform Jualan Kita dari awal hingga siap berjualan.</p>
-                    </div>
-                </div>
-                
-                <div class="video-card fade-in delay-1">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/3x5nXPM88-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">Strategi Promosi Produk</h3>
-                        <p class="video-desc">Temukan strategi promosi efektif untuk meningkatkan penjualan di Jualan Kita.</p>
-                    </div>
-                </div>
-                
-                <div class="video-card fade-in delay-2">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">Optimasi Katalog Produk</h3>
-                        <p class="video-desc">Pelajari cara mengoptimalkan katalog produk Anda untuk meningkatkan konversi penjualan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     
     <!-- Jualan Kita Section -->
     <section class="jualan-kita" id="jualankita">
@@ -1341,12 +1106,91 @@
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2 class="section-title fade-in">Apa Kata Klien Kami?</h2>
-            <p class="fade-in delay-1" style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">Temukan pengalaman nyata dari pelaku UMKM yang telah berkembang bersama kami.</p>
+            <h2 class="section-title fade-in">Testimoni Klien</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">
+                        "Sebagai pemula di Jualan Kita, bimbingan dari Owner sangat membantu. Toko saya yang awalnya sepi sekarang bisa mencapai 50 pesanan per minggu. Strategi pricing dan promosinya benar-benar efektif!"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background-color: #3498db;">
+                            SR
+                        </div>
+                        <div class="author-info">
+                            <h4>Siti Rahma</h4>
+                            <p>Pemilik Kedai Kue Tradisional</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-1">
+                    <p class="testimonial-text">
+                        "Pelatihan optimasi produk dari Owner Jualan Kita sangat detail. Foto produk saya sekarang terlihat profesional dan konversi penjualan meningkat 2x lipat dalam sebulan. Recommended banget!"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background-color: #e74c3c;">
+                            BS
+                        </div>
+                        <div class="author-info">
+                            <h4>Budi Santoso</h4>
+                            <p>Pengrajin Kerajinan Tangan</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-2">
+                    <p class="testimonial-text">
+                        "Saya sangat terkesan dengan pengetahuan mendalam Owner tentang platform Jualan Kita. Berkat strateginya, omzet toko saya naik 300% dalam 3 bulan. Kini saya bisa fokus mengembangkan bisnis."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background-color: #2ecc71;">
+                            DL
+                        </div>
+                        <div class="author-info">
+                            <h4>Dewi Lestari</h4>
+                            <p>Pemilik Brand Fashion Lokal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <a href="https://lenterakarya.github.io/testimoni/" class="testimonial-btn fade-in delay-2" target="_blank">
-                <i class="fas fa-comment-alt"></i> Lihat Semua Testimoni
-            </a>
+            <!-- Testimonial Form -->
+            <div class="testimonial-form-container fade-in delay-3">
+                <h3>Tambah Testimoni Anda</h3>
+                <form class="testimonial-form" id="testimonialForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="testimonial-name">Nama Lengkap</label>
+                            <input type="text" id="testimonial-name" required placeholder="Masukkan nama lengkap Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="testimonial-business">Jenis Bisnis</label>
+                            <input type="text" id="testimonial-business" required placeholder="Jenis bisnis Anda">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonial-rating">Rating</label>
+                        <select id="testimonial-rating" required>
+                            <option value="" disabled selected>Pilih rating</option>
+                            <option value="5">★★★★★ - Sangat Puas</option>
+                            <option value="4">★★★★☆ - Puas</option>
+                            <option value="3">★★★☆☆ - Cukup</option>
+                            <option value="2">★★☆☆☆ - Kurang Puas</option>
+                            <option value="1">★☆☆☆☆ - Tidak Puas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonial-message">Testimoni Anda</label>
+                        <textarea id="testimonial-message" required placeholder="Bagikan pengalaman Anda menggunakan layanan kami"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Kirim Testimoni
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
     
@@ -1430,22 +1274,14 @@
                         <span>Owner Jualan Kita</span>
                     </a>
                     <p>Layanan konsultasi profesional untuk membantu UMKM berkembang di platform Jualan Kita dengan strategi yang terukur dan efektif, langsung dari pemilik platform.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/6287865614222" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
                 </div>
                 
                 <div class="footer-col fade-in delay-1">
                     <h3>Tautan Cepat</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-chevron-right"></i><a href="https://lenterakarya.github.io/jualan-kita/" target="_blank">Beranda</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="#about">Tentang Owner</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="#services">Layanan</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="#videos">Video</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="https://lenterakarya.github.io/testimoni/" target="_blank">Testimoni</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#jualankita">Jualan Kita</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#testimonials">Testimoni</a></li>
                         <li><i class="fas fa-chevron-right"></i><a href="#contact">Kontak</a></li>
                     </ul>
                 </div>
@@ -1529,22 +1365,49 @@
             });
         });
 
-        // Form submission
+        // Form submission with actual email and WhatsApp integration
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simulate form submission
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
             submitBtn.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Terkirim!';
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Send to email (using FormSubmit.co or similar service)
+            fetch('https://formsubmit.co/ajax/konsultasi@lenterakarya.com', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    _replyto: formData.email,
+                    _subject: `Pesan baru dari ${formData.name} - ${formData.subject}`
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Also send WhatsApp notification
+                const whatsappMessage = `*Pesan Baru dari Website*%0A%0A*Nama:* ${formData.name}%0A*Email:* ${formData.email}%0A*Subjek:* ${formData.subject}%0A%0A*Pesan:*%0A${formData.message}`;
+                window.open(`https://wa.me/6287865614222?text=${whatsappMessage}`, '_blank');
                 
                 // Show success message
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Terkirim!';
+                
                 const successAlert = document.createElement('div');
                 successAlert.style.position = 'fixed';
                 successAlert.style.top = '20px';
@@ -1574,7 +1437,97 @@
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 }, 2000);
-            }, 1500);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitBtn.innerHTML = '<i class="fas fa-times"></i> Gagal';
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+        });
+
+        // Testimonial form submission with actual email and WhatsApp integration
+        document.getElementById('testimonialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('testimonial-name').value,
+                business: document.getElementById('testimonial-business').value,
+                rating: document.getElementById('testimonial-rating').value,
+                message: document.getElementById('testimonial-message').value
+            };
+            
+            // Send to email (using FormSubmit.co or similar service)
+            fetch('https://formsubmit.co/ajax/konsultasi@lenterakarya.com', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    business: formData.business,
+                    rating: formData.rating,
+                    message: formData.message,
+                    _subject: `Testimoni baru dari ${formData.name}`
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Also send WhatsApp notification
+                const whatsappMessage = `*Testimoni Baru*%0A%0A*Nama:* ${formData.name}%0A*Bisnis:* ${formData.business}%0A*Rating:* ${formData.rating} bintang%0A%0A*Testimoni:*%0A${formData.message}`;
+                window.open(`https://wa.me/6287865614222?text=${whatsappMessage}`, '_blank');
+                
+                // Show success message
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Terkirim!';
+                
+                const successAlert = document.createElement('div');
+                successAlert.style.position = 'fixed';
+                successAlert.style.top = '20px';
+                successAlert.style.right = '20px';
+                successAlert.style.backgroundColor = '#38a169';
+                successAlert.style.color = 'white';
+                successAlert.style.padding = '15px 25px';
+                successAlert.style.borderRadius = '8px';
+                successAlert.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                successAlert.style.zIndex = '1000';
+                successAlert.style.animation = 'fadeIn 0.5s ease';
+                successAlert.innerHTML = '<i class="fas fa-check-circle"></i> Testimoni Anda telah terkirim! Terima kasih atas masukan Anda.';
+                
+                document.body.appendChild(successAlert);
+                
+                // Remove alert after 5 seconds
+                setTimeout(() => {
+                    successAlert.style.animation = 'fadeOut 0.5s ease';
+                    setTimeout(() => {
+                        document.body.removeChild(successAlert);
+                    }, 500);
+                }, 5000);
+                
+                // Reset form after 2 seconds
+                setTimeout(() => {
+                    this.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitBtn.innerHTML = '<i class="fas fa-times"></i> Gagal';
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
         });
 
         // Navbar scroll effect
