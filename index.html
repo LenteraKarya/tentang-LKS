@@ -192,6 +192,17 @@
             box-shadow: var(--shadow-md);
         }
 
+        .btn-secondary {
+            background-color: var(--dark);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--darker);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
         /* Navigation */
         nav {
             position: fixed;
@@ -237,7 +248,8 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
+            align-items: center;
         }
 
         .nav-links a {
@@ -268,6 +280,11 @@
 
         .nav-links a:hover {
             color: var(--primary);
+        }
+
+        .nav-links .btn-nav {
+            padding: 0.6rem 1.2rem;
+            margin-left: 1rem;
         }
 
         .mobile-menu-toggle {
@@ -321,6 +338,11 @@
             background-color: rgba(230, 126, 34, 0.1);
             color: var(--primary);
             transform: translateX(5px);
+        }
+
+        .mobile-menu .btn-nav {
+            margin-top: 1rem;
+            text-align: center;
         }
 
         .mobile-menu-overlay {
@@ -596,6 +618,13 @@
         /* Testimonials */
         .testimonials {
             background-color: var(--light);
+        }
+
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
         }
 
         .testimonial-grid {
@@ -1275,6 +1304,12 @@
                 <a href="#vision">Visi</a>
                 <a href="#testimonials">Testimoni</a>
                 <a href="#contact">Kontak</a>
+                <a href="https://lenterakarya.github.io/jualan-kita/" class="btn btn-secondary btn-nav" target="_blank">
+                    <i class="fas fa-store"></i> UMKM Naik Kelas
+                </a>
+                <a href="https://lenterakarya.github.io/testimoni/" class="btn btn-primary btn-nav" target="_blank">
+                    <i class="fas fa-comment-alt"></i> Lihat Testimoni
+                </a>
             </div>
             
             <button class="mobile-menu-toggle" id="mobileMenuToggle">
@@ -1290,6 +1325,12 @@
         <a href="#vision">Visi</a>
         <a href="#testimonials">Testimoni</a>
         <a href="#contact">Kontak</a>
+        <a href="https://lenterakarya.github.io/jualan-kita/" class="btn btn-secondary btn-nav" target="_blank">
+            <i class="fas fa-store"></i> UMKM Naik Kelas
+        </a>
+        <a href="https://lenterakarya.github.io/testimoni/" class="btn btn-primary btn-nav" target="_blank">
+            <i class="fas fa-comment-alt"></i> Lihat Testimoni
+        </a>
     </div>
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
     
@@ -1312,6 +1353,9 @@
                 </a>
                 <a href="#contact" class="btn btn-outline">
                     <i class="fas fa-phone-alt"></i> Hubungi Kami
+                </a>
+                <a href="https://lenterakarya.github.io/jualan-kita/" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-store"></i> UMKM Naik Kelas
                 </a>
             </div>
         </div>
@@ -1350,6 +1394,68 @@
                     Membangun ekosistem bisnis digital yang kuat untuk UMKM Situbondo, menciptakan jaringan kolaboratif yang saling mendukung, dan membawa produk lokal ke panggung yang lebih luas. Dengan semangat "Situbondo Naik Kelas", saya berkomitmen untuk menjadi bagian dari transformasi ekonomi digital di daerah tercinta ini.
                 </div>
                 <div class="vision-slogan fade-in delay-2">"Dari Situbondo untuk Indonesia"</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="testimonial-header">
+                <h2 class="section-title fade-in">Testimoni Klien</h2>
+                <a href="https://lenterakarya.github.io/testimoni/" class="btn btn-primary fade-in delay-1" target="_blank">
+                    <i class="fas fa-comment-alt"></i> Lihat Semua Testimoni
+                </a>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "Lentera Karya telah membantu saya memperluas jaringan bisnis saya secara signifikan. Dalam waktu singkat, omzet saya meningkat 40% berkat strategi pemasaran digital mereka."
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Ahmad Fauzi</h4>
+                            <p>Pemilik UMKM Keripik Tempe</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-text">
+                        "Sebagai pengusaha kecil, saya kesulitan menjangkau pasar yang lebih luas. Berkat Lentera Karya, produk saya sekarang dikenal hingga luar kota. Pelayanan mereka sangat profesional."
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Siti Nurhaliza</h4>
+                            <p>Pemilik Usaha Kue Tradisional</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-text">
+                        "Saya sangat terkesan dengan pendekatan personal dari tim Lentera Karya. Mereka benar-benar memahami kebutuhan UMKM dan memberikan solusi yang tepat sasaran."
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">B</div>
+                        <div class="author-info">
+                            <h4>Bambang Sutrisno</h4>
+                            <p>Pemilik Usaha Kerajinan Kayu</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1442,7 +1548,9 @@
                         <li><i class="fas fa-chevron-right"></i><a href="#home">Beranda</a></li>
                         <li><i class="fas fa-chevron-right"></i><a href="#about">Tentang Saya</a></li>
                         <li><i class="fas fa-chevron-right"></i><a href="#vision">Visi</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#testimonials">Testimoni</a></li>
                         <li><i class="fas fa-chevron-right"></i><a href="#contact">Kontak</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="https://lenterakarya.github.io/jualan-kita/" target="_blank">Website UMKM Situbondo Naik Kelas</a></li>
                     </ul>
                 </div>
                 
