@@ -23,9 +23,6 @@
             --text-light: #777;
             --text-lighter: #999;
             --success: #38a169;
-            --info: #3498db;
-            --warning: #f39c12;
-            --danger: #e74c3c;
             --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
             --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -40,10 +37,8 @@
             --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-light));
             --gradient-dark: linear-gradient(135deg, var(--dark), var(--darker));
             --gradient-gold: linear-gradient(135deg, var(--gold), #f1c40f);
-            --gradient-vision: linear-gradient(135deg, #16222a, #3a6073);
+            --gradient-vision: linear-gradient(135deg, #3a6073, #16222a);
             --gradient-footer: linear-gradient(135deg, #1a2a3a, #0d1a26);
-            --glass-dark: rgba(22, 34, 42, 0.85);
-            --glass-light: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -563,13 +558,12 @@
             font-style: italic;
         }
 
-        /* Vision Section - Premium Glassmorphism Design */
+        /* Vision Section - Enhanced with Particles */
         .vision {
             background: var(--gradient-vision);
             color: white;
             position: relative;
             overflow: hidden;
-            padding: 8rem 0;
         }
 
         .vision::before {
@@ -598,21 +592,23 @@
 
         .vision-container {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-            background: var(--glass-dark);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: var(--radius-xl);
-            padding: 4rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--glass-light);
+        }
+
+        #vision-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
         }
 
         .vision-title {
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 3rem;
             color: white;
             font-family: 'Playfair Display', serif;
@@ -636,8 +632,7 @@
             line-height: 1.8;
             margin-bottom: 3rem;
             position: relative;
-            z-index: 1;
-            color: rgba(255, 255, 255, 0.9);
+            z-index: 2;
         }
 
         .vision-content::before,
@@ -668,6 +663,7 @@
             font-style: italic;
             position: relative;
             display: inline-block;
+            z-index: 2;
         }
 
         .vision-slogan::before {
@@ -980,7 +976,7 @@
             margin: 0 auto;
             padding: 0 20px;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .footer-col {
@@ -1081,7 +1077,7 @@
             color: rgba(255, 255, 255, 0.7);
             font-size: 1rem;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         /* Footer Particles */
@@ -1091,7 +1087,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            z-index: 0;
+            z-index: 1;
         }
 
         /* Floating WhatsApp Button */
@@ -1215,10 +1211,6 @@
                 max-width: 500px;
                 margin: 0 auto;
             }
-
-            .vision-container {
-                padding: 3rem;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1276,18 +1268,6 @@
                 font-size: 1.3rem;
                 bottom: 100px;
                 right: 30px;
-            }
-
-            .vision-container {
-                padding: 2.5rem;
-            }
-
-            .vision-title {
-                font-size: 1.8rem;
-            }
-
-            .vision-content {
-                font-size: 1.1rem;
             }
         }
 
@@ -1347,25 +1327,6 @@
             .about-image {
                 height: 300px;
             }
-
-            .vision-container {
-                padding: 1.5rem;
-            }
-
-            .vision-title {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-            }
-
-            .vision-content {
-                font-size: 1rem;
-                margin-bottom: 2rem;
-            }
-
-            .vision-slogan {
-                font-size: 1.2rem;
-                margin-top: 2rem;
-            }
         }
 
         /* Animation */
@@ -1416,23 +1377,6 @@
         .delay-3 { animation-delay: 0.6s; }
         .delay-4 { animation-delay: 0.8s; }
         .delay-5 { animation-delay: 1s; }
-
-        /* New Glassmorphism Effect */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: var(--radius-lg);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
     </style>
 </head>
 <body>
@@ -1531,10 +1475,11 @@
         </div>
     </section>
     
-    <!-- Vision Section -->
+    <!-- Vision Section with Particles -->
     <section class="vision" id="vision">
+        <div id="vision-particles"></div>
         <div class="container">
-            <div class="vision-container glass-card">
+            <div class="vision-container">
                 <h2 class="vision-title fade-in">Visi & Misi</h2>
                 <div class="vision-content fade-in delay-1">
                     Membangun ekosistem bisnis digital yang kuat untuk UMKM Situbondo, menciptakan jaringan kolaboratif yang saling mendukung, dan membawa produk lokal ke panggung yang lebih luas. Dengan semangat "Situbondo Naik Kelas", saya berkomitmen untuk menjadi bagian dari transformasi ekonomi digital di daerah tercinta ini.
@@ -1676,7 +1621,7 @@
         </div>
     </section>
     
-    <!-- Footer -->
+    <!-- Footer with Particles -->
     <footer>
         <div id="footer-particles"></div>
         <div class="container">
@@ -2025,6 +1970,113 @@
                     },
                     "onclick": {
                         "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Initialize particles.js for vision section
+        particlesJS('vision-particles', {
+            "particles": {
+                "number": {
+                    "value": 40,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#e67e22"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 2,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 120,
+                    "color": "#e67e22",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": false,
                         "mode": "push"
                     },
                     "resize": true
