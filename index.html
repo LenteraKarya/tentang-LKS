@@ -13,7 +13,8 @@
         :root {
             --primary: #e67e22;
             --primary-dark: #d35400;
-            --accent: #e67e22;
+            --primary-light: #f39c12;
+            --accent: #f1c40f;
             --dark: #2c3e50;
             --darker: #1a252f;
             --light: #f9f9f9;
@@ -33,6 +34,9 @@
             --radius-xl: 24px;
             --gold: #D4AF37;
             --silver: #C0C0C0;
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-light));
+            --gradient-dark: linear-gradient(135deg, var(--dark), var(--darker));
+            --gradient-gold: linear-gradient(135deg, var(--gold), #f1c40f);
         }
 
         * {
@@ -151,7 +155,7 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        /* Button Styles */
+        /* Button Styles - Enhanced */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -167,17 +171,35 @@
             margin: 0.5rem;
             font-size: 1.05rem;
             box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            z-index: -1;
+            transition: var(--transition);
         }
 
         .btn-primary {
-            background-color: var(--primary);
             color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-dark);
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover::before {
+            opacity: 0.9;
         }
 
         .btn-outline {
@@ -193,14 +215,15 @@
         }
 
         .btn-secondary {
-            background-color: var(--dark);
+            background: var(--gradient-dark);
             color: white;
         }
 
         .btn-secondary:hover {
-            background-color: var(--darker);
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
+            background: var(--gradient-dark);
+            opacity: 0.9;
         }
 
         /* Navigation */
@@ -533,7 +556,7 @@
             font-style: italic;
         }
 
-        /* Vision Section */
+        /* Vision Section - Enhanced */
         .vision {
             background: linear-gradient(135deg, var(--dark), var(--darker));
             color: white;
@@ -554,6 +577,17 @@
             z-index: 0;
         }
 
+        .vision::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(230, 126, 34, 0.1) 0%, rgba(230, 126, 34, 0) 70%);
+            z-index: 0;
+        }
+
         .vision-container {
             position: relative;
             z-index: 1;
@@ -567,6 +601,7 @@
             margin-bottom: 3rem;
             color: white;
             font-family: 'Playfair Display', serif;
+            position: relative;
         }
 
         .vision-title::after {
@@ -586,6 +621,7 @@
             line-height: 1.8;
             margin-bottom: 3rem;
             position: relative;
+            z-index: 1;
         }
 
         .vision-content::before,
@@ -595,6 +631,7 @@
             color: rgba(255, 255, 255, 0.1);
             position: absolute;
             font-family: 'Playfair Display', serif;
+            z-index: -1;
         }
 
         .vision-content::before {
@@ -610,9 +647,21 @@
         .vision-slogan {
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--accent);
             margin-top: 3rem;
             font-style: italic;
+            position: relative;
+            display: inline-block;
+        }
+
+        .vision-slogan::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
         }
 
         /* Testimonials */
@@ -885,12 +934,26 @@
             color: var(--primary);
         }
 
-        /* Footer */
+        /* Footer - Enhanced with Particles */
         footer {
             background: linear-gradient(to bottom, var(--dark), var(--darker));
             color: white;
             padding: 6rem 0 0;
             position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.03)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
         }
 
         .footer-container {
@@ -900,6 +963,8 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-col {
@@ -999,6 +1064,18 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.7);
             font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer Particles */
+        #footer-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
         }
 
         /* Floating WhatsApp Button */
@@ -1045,7 +1122,7 @@
             position: fixed;
             bottom: 120px;
             right: 40px;
-            background-color: var(--primary);
+            background: var(--gradient-primary);
             color: white;
             width: 60px;
             height: 60px;
@@ -1069,7 +1146,8 @@
 
         .back-to-top:hover {
             transform: translateY(-5px);
-            background-color: var(--primary-dark);
+            background: var(--gradient-primary);
+            opacity: 0.9;
             box-shadow: 0 10px 25px rgba(230, 126, 34, 0.4);
         }
 
@@ -1532,6 +1610,7 @@
     
     <!-- Footer -->
     <footer>
+        <div id="footer-particles"></div>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col footer-about fade-in">
@@ -1804,7 +1883,7 @@
 
         window.addEventListener('scroll', animateOnScroll);
         
-        // Initialize particles.js
+        // Initialize particles.js for header
         particlesJS('particles-js', {
             "particles": {
                 "number": {
@@ -1878,6 +1957,113 @@
                     },
                     "onclick": {
                         "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Initialize particles.js for footer
+        particlesJS('footer-particles', {
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#e67e22"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 2,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 120,
+                    "color": "#e67e22",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.5,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": false,
                         "mode": "push"
                     },
                     "resize": true
