@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Konsultasi Bisnis Jualan Kita - Panduan profesional untuk pengembangan UMKM di platform Jualan Kita">
-    <meta name="keywords" content="jualan kita, konsultan bisnis, umkm, pemasaran digital, toko online">
-    <title>Owner Jualan Kita | Ahli Pengembangan UMKM Digital</title>
+    <meta name="description" content="Lentera Karya Situbondo - Wadah promosi dan jaringan bisnis UMKM Situbondo">
+    <meta name="keywords" content="lentera karya, situbondo, umkm, bisnis digital, pengusaha situbondo">
+    <title>Lentera Karya Situbondo | Wadah UMKM Digital</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://raw.githubusercontent.com/LenteraKarya/jualan-kita/main/assets/images/logo-jualan-kita.png" type="image/png">
     <style>
         :root {
@@ -31,6 +31,8 @@
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-xl: 24px;
+            --gold: #D4AF37;
+            --silver: #C0C0C0;
         }
 
         * {
@@ -98,13 +100,18 @@
         }
 
         .logo img {
-            height: 90px;
+            height: 120px;
+            width: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
         }
 
         .logo:hover img {
-            transform: scale(1.05) rotate(-5deg);
+            transform: scale(1.05);
+            border-color: var(--primary);
         }
 
         .logo-text {
@@ -123,6 +130,7 @@
             -webkit-text-fill-color: transparent;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             letter-spacing: -0.5px;
+            font-family: 'Playfair Display', serif;
         }
 
         .logo-sub {
@@ -333,46 +341,210 @@
             visibility: visible;
         }
 
-        /* Jualan Kita Section */
-        .jualan-kita {
+        /* About Section */
+        .about {
             background-color: white;
+            position: relative;
+            overflow: hidden;
         }
 
-        .jk-content {
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://raw.githubusercontent.com/LenteraKarya/tentang-LKS/refs/heads/main/foto-founder.jpeg') no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            height: 500px;
+            transform-style: preserve-3d;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            border: 3px solid var(--primary);
+            border-radius: var(--radius-xl);
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .about-image:hover::before {
+            top: 15px;
+            left: 15px;
+            right: -15px;
+            bottom: -15px;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-content {
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--gold));
+            border-radius: 4px;
+        }
+
+        .about-text {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .signature {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 2rem;
+        }
+
+        .signature-name {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .signature-title {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Vision Section */
+        .vision {
+            background: linear-gradient(135deg, var(--dark), var(--darker));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.03)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .vision-container {
+            position: relative;
+            z-index: 1;
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .jk-content p {
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
+        .vision-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: white;
+            font-family: 'Playfair Display', serif;
         }
 
-        .jk-content ul {
-            text-align: left;
-            max-width: 600px;
-            margin: 3rem auto;
-            list-style-position: inside;
-            padding-left: 0;
-        }
-
-        .jk-content li {
-            margin-bottom: 1.2rem;
-            position: relative;
-            padding-left: 2rem;
-            list-style-type: none;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        .jk-content li::before {
-            content: "▹";
-            color: var(--primary);
-            font-weight: bold;
+        .vision-title::after {
+            content: '';
             position: absolute;
-            left: 0;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--gold));
+            border-radius: 4px;
+        }
+
+        .vision-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .vision-content::before,
+        .vision-content::after {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .vision-content::before {
+            top: -30px;
+            left: -20px;
+        }
+
+        .vision-content::after {
+            bottom: -50px;
+            right: -20px;
+        }
+
+        .vision-slogan {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 3rem;
+            font-style: italic;
         }
 
         /* Testimonials */
@@ -433,7 +605,7 @@
         }
 
         .rating {
-            color: gold;
+            color: var(--gold);
             margin-bottom: 1.5rem;
             font-size: 1.3rem;
             letter-spacing: 3px;
@@ -477,110 +649,6 @@
         .author-info p {
             font-size: 0.95rem;
             color: var(--text-light);
-        }
-
-        /* Testimonial Form */
-        .testimonial-form-container {
-            max-width: 800px;
-            margin: 5rem auto 0;
-            background: white;
-            padding: 3rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            position: relative;
-        }
-
-        .testimonial-form-container h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-            color: var(--dark);
-            position: relative;
-        }
-
-        .testimonial-form-container h3::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary);
-            border-radius: 4px;
-        }
-
-        .testimonial-form {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--dark);
-            font-size: 1rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: var(--radius-sm);
-            font-family: 'Poppins', sans-serif;
-            transition: var(--transition);
-            background-color: white;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
-        }
-
-        .submit-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2.5rem;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-top: 1rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .submit-btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
         }
 
         /* Contact Section */
@@ -843,6 +911,16 @@
             box-shadow: 0 10px 25px rgba(230, 126, 34, 0.4);
         }
 
+        /* Particles */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
         /* Responsive Adjustments */
         @media (max-width: 1200px) {
             section {
@@ -871,8 +949,15 @@
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
             
-            .form-row {
+            .about-container {
                 grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-image {
+                height: 400px;
+                max-width: 500px;
+                margin: 0 auto;
             }
         }
 
@@ -932,10 +1017,6 @@
                 bottom: 100px;
                 right: 30px;
             }
-            
-            .testimonial-form-container {
-                padding: 2rem;
-            }
         }
 
         @media (max-width: 576px) {
@@ -948,7 +1029,8 @@
             }
             
             .logo img {
-                height: 70px;
+                height: 100px;
+                width: 100px;
             }
             
             .tagline {
@@ -966,7 +1048,7 @@
                 margin-bottom: 3rem;
             }
             
-            .testimonial-card, .contact-info, .contact-form, .testimonial-form-container {
+            .testimonial-card, .contact-info, .contact-form {
                 padding: 1.5rem;
             }
             
@@ -989,6 +1071,10 @@
                 bottom: 85px;
                 right: 20px;
             }
+            
+            .about-image {
+                height: 300px;
+            }
         }
 
         /* Animation */
@@ -1007,6 +1093,17 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
         .fade-in {
             animation: fadeIn 1s ease forwards;
         }
@@ -1017,6 +1114,10 @@
 
         .fade-in-right {
             animation: fadeInRight 1s ease forwards;
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
         }
 
         .delay-1 { animation-delay: 0.2s; }
@@ -1031,13 +1132,14 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <img src="https://raw.githubusercontent.com/LenteraKarya/jualan-kita/main/assets/images/logo-jualan-kita.png" alt="Jualan Kita Logo">
-                <span>Owner Jualan Kita</span>
+                <img src="https://raw.githubusercontent.com/LenteraKarya/jualan-kita/main/assets/images/logo-jualan-kita.png" alt="Lentera Karya Logo">
+                <span>Lentera Karya</span>
             </a>
             
             <div class="nav-links">
                 <a href="#home" class="active">Beranda</a>
-                <a href="#jualankita">Jualan Kita</a>
+                <a href="#about">Tentang Saya</a>
+                <a href="#vision">Visi</a>
                 <a href="#testimonials">Testimoni</a>
                 <a href="#contact">Kontak</a>
             </div>
@@ -1051,7 +1153,8 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#home">Beranda</a>
-        <a href="#jualankita">Jualan Kita</a>
+        <a href="#about">Tentang Saya</a>
+        <a href="#vision">Visi</a>
         <a href="#testimonials">Testimoni</a>
         <a href="#contact">Kontak</a>
     </div>
@@ -1059,19 +1162,20 @@
     
     <!-- Header -->
     <header id="home">
+        <div id="particles-js"></div>
         <div class="header-content">
             <div class="logo">
-                <img src="https://raw.githubusercontent.com/LenteraKarya/jualan-kita/main/assets/images/logo-jualan-kita.png" alt="Jualan Kita Logo">
+                <img src="https://raw.githubusercontent.com/LenteraKarya/tentang-LKS/refs/heads/main/foto-founder.jpeg" alt="Founder Lentera Karya" class="float">
                 <div class="logo-text">
-                    <span class="logo-main">Owner Jualan Kita</span>
-                    <span class="logo-sub">Update Bisnis UMKM Anda Bersama Lentera Karya</span>
+                    <span class="logo-main">Lentera Karya Situbondo</span>
+                    <span class="logo-sub">Wadah Promosi dan Jaringan Bisnis UMKM Situbondo</span>
                 </div>
             </div>
-            <p class="tagline fade-in">Panduan Profesional untuk Pengembangan UMKM di Platform Jualan Kita. Bersama kita wujudkan mimpi bisnis Anda dengan strategi yang tepat dan terukur.</p>
+            <p class="tagline fade-in">Membangun ekosistem bisnis digital yang inklusif untuk UMKM Situbondo. Bersama kita wujudkan mimpi bisnis Anda dengan strategi yang tepat dan terukur.</p>
             
             <div class="header-buttons fade-in delay-1">
-                <a href="#jualankita" class="btn btn-primary">
-                    <i class="fas fa-store"></i> Jelajahi Jualan Kita
+                <a href="#about" class="btn btn-primary">
+                    <i class="fas fa-user-tie"></i> Kenali Saya
                 </a>
                 <a href="#contact" class="btn btn-outline">
                     <i class="fas fa-phone-alt"></i> Hubungi Kami
@@ -1080,25 +1184,39 @@
         </div>
     </header>
     
-    <!-- Jualan Kita Section -->
-    <section class="jualan-kita" id="jualankita">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title fade-in">Tentang Jualan Kita</h2>
-            <div class="jk-content">
-                <p class="fade-in">Jualan Kita adalah platform e-commerce yang dirancang khusus untuk UMKM Indonesia dengan fitur-fitur lengkap untuk memulai dan mengembangkan bisnis online dengan mudah dan efektif.</p>
-                
-                <p class="fade-in delay-1">Sebagai owner dan konsultan ahli Jualan Kita, saya dapat membantu Anda:</p>
-                <ul class="fade-in delay-2">
-                    <li>Memahami semua fitur dan keunggulan platform Jualan Kita secara mendalam</li>
-                    <li>Mengoptimalkan penggunaan platform untuk bisnis Anda dengan strategi khusus</li>
-                    <li>Mengembangkan strategi penjualan yang disesuaikan dengan produk dan target pasar Anda</li>
-                    <li>Menganalisis performa toko berbasis digital</li>
-                    <li>Membangun branding yang kuat untuk produk Anda di platform Jualan Kita</li>
-                </ul>
-                
-                <a href="https://lenterakarya.github.io/jualan-kita/" class="btn btn-primary fade-in delay-3" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> Kunjungi Website Jualan Kita
-                </a>
+            <div class="about-container">
+                <div class="about-image fade-in">
+                    <img src="https://raw.githubusercontent.com/LenteraKarya/tentang-LKS/refs/heads/main/foto-founder.jpeg" alt="Founder Lentera Karya">
+                </div>
+                <div class="about-content fade-in delay-1">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <div class="about-text">
+                        <p>Saya adalah seorang putra daerah kelahiran Situbondo, lulusan SMK IBRAHIMY SITUBONDO, yang kini berusia 36 tahun dan berprofesi sebagai tenaga honorer. Meski berlatar belakang pendidikan sederhana, saya memiliki mimpi besar: menjadi pengusaha yang tumbuh dari nol dan memberi manfaat seluas-luasnya bagi masyarakat.</p>
+                        <p>Berangkat dari visi tersebut, saya membangun Lentera Karya Situbondo sebuah platform digital yang dirancang sebagai wadah promosi, publikasi, dan jaringan bisnis bagi para pelaku UMKM, khususnya di Situbondo. Platform ini bukan hanya untuk usaha saya sendiri, tetapi terbuka bagi semua pengusaha kecil dan menengah yang ingin berkembang bersama.</p>
+                        <p>Saya terinspirasi oleh semangat dan slogan kepemimpinan Bupati Situbondo saat ini, Mas Rio: "Situbondo Naik Kelas." Inilah yang menjadi bahan bakar visi saya mendorong UMKM lokal agar mampu naik kelas dan bersaing secara sehat dalam ekosistem digital yang inklusif dan berdaya saing.</p>
+                        <p>Saya percaya bahwa perubahan besar selalu dimulai dari langkah sederhana. Lentera Karya adalah langkah awal saya menuju cita-cita besar itu, dan saya berharap platform ini akan menjadi ruang kolaboratif yang mendukung pertumbuhan UMKM dari akar rumput hingga tingkat nasional.</p>
+                    </div>
+                    <div class="signature fade-in delay-2">
+                        <div class="signature-name">Founder Lentera Karya</div>
+                        <div class="signature-title">Putra Asli Situbondo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Vision Section -->
+    <section class="vision" id="vision">
+        <div class="container">
+            <div class="vision-container">
+                <h2 class="vision-title fade-in">Visi & Misi</h2>
+                <div class="vision-content fade-in delay-1">
+                    Membangun ekosistem bisnis digital yang kuat untuk UMKM Situbondo, menciptakan jaringan kolaboratif yang saling mendukung, dan membawa produk lokal ke panggung yang lebih luas. Dengan semangat "Situbondo Naik Kelas", saya berkomitmen untuk menjadi bagian dari transformasi ekonomi digital di daerah tercinta ini.
+                </div>
+                <div class="vision-slogan fade-in delay-2">"Dari Situbondo untuk Indonesia"</div>
             </div>
         </div>
     </section>
@@ -1110,7 +1228,7 @@
             <div class="testimonial-grid">
                 <div class="testimonial-card fade-in">
                     <p class="testimonial-text">
-                        "Sebagai pemula di Jualan Kita, bimbingan dari Owner sangat membantu. Toko saya yang awalnya sepi sekarang bisa mencapai 50 pesanan per minggu. Strategi pricing dan promosinya benar-benar efektif!"
+                        "Sebagai pemula di dunia digital, bimbingan dari Lentera Karya sangat membantu. Toko saya yang awalnya sepi sekarang bisa mencapai 50 pesanan per minggu. Strategi pricing dan promosinya benar-benar efektif!"
                     </p>
                     <div class="rating">★★★★★</div>
                     <div class="testimonial-author">
@@ -1126,7 +1244,7 @@
                 
                 <div class="testimonial-card fade-in delay-1">
                     <p class="testimonial-text">
-                        "Pelatihan optimasi produk dari Owner Jualan Kita sangat detail. Foto produk saya sekarang terlihat profesional dan konversi penjualan meningkat 2x lipat dalam sebulan. Recommended banget!"
+                        "Pelatihan optimasi produk dari Lentera Karya sangat detail. Foto produk saya sekarang terlihat profesional dan konversi penjualan meningkat 2x lipat dalam sebulan. Recommended banget!"
                     </p>
                     <div class="rating">★★★★★</div>
                     <div class="testimonial-author">
@@ -1142,7 +1260,7 @@
                 
                 <div class="testimonial-card fade-in delay-2">
                     <p class="testimonial-text">
-                        "Saya sangat terkesan dengan pengetahuan mendalam Owner tentang platform Jualan Kita. Berkat strateginya, omzet toko saya naik 300% dalam 3 bulan. Kini saya bisa fokus mengembangkan bisnis."
+                        "Saya sangat terkesan dengan pengetahuan mendalam tentang platform digital. Berkat strateginya, omzet toko saya naik 300% dalam 3 bulan. Kini saya bisa fokus mengembangkan bisnis."
                     </p>
                     <div class="rating">★★★★★</div>
                     <div class="testimonial-author">
@@ -1155,41 +1273,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Testimonial Form -->
-            <div class="testimonial-form-container fade-in delay-3">
-                <h3>Tambah Testimoni Anda</h3>
-                <form class="testimonial-form" id="testimonialForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="testimonial-name">Nama Lengkap</label>
-                            <input type="text" id="testimonial-name" required placeholder="Masukkan nama lengkap Anda">
-                        </div>
-                        <div class="form-group">
-                            <label for="testimonial-business">Jenis Bisnis</label>
-                            <input type="text" id="testimonial-business" required placeholder="Jenis bisnis Anda">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="testimonial-rating">Rating</label>
-                        <select id="testimonial-rating" required>
-                            <option value="" disabled selected>Pilih rating</option>
-                            <option value="5">★★★★★ - Sangat Puas</option>
-                            <option value="4">★★★★☆ - Puas</option>
-                            <option value="3">★★★☆☆ - Cukup</option>
-                            <option value="2">★★☆☆☆ - Kurang Puas</option>
-                            <option value="1">★☆☆☆☆ - Tidak Puas</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="testimonial-message">Testimoni Anda</label>
-                        <textarea id="testimonial-message" required placeholder="Bagikan pengalaman Anda menggunakan layanan kami"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Kirim Testimoni
-                    </button>
-                </form>
             </div>
         </div>
     </section>
@@ -1246,7 +1329,7 @@
                             <select id="subject" required>
                                 <option value="" disabled selected>Pilih subjek pesan Anda</option>
                                 <option value="konsultasi">Konsultasi Bisnis</option>
-                                <option value="jualankita">Pertanyaan Jualan Kita</option>
+                                <option value="jualankita">Pertanyaan Platform</option>
                                 <option value="pelatihan">Pelatihan & Workshop</option>
                                 <option value="lainnya">Lainnya</option>
                             </select>
@@ -1270,18 +1353,18 @@
             <div class="footer-container">
                 <div class="footer-col footer-about fade-in">
                     <a href="#" class="footer-logo">
-                        <img src="https://raw.githubusercontent.com/LenteraKarya/jualan-kita/main/assets/images/logo-jualan-kita.png" alt="Jualan Kita Logo">
-                        <span>Owner Jualan Kita</span>
+                        <img src="https://raw.githubusercontent.com/LenteraKarya/jualan-kita/main/assets/images/logo-jualan-kita.png" alt="Lentera Karya Logo">
+                        <span>Lentera Karya</span>
                     </a>
-                    <p>Layanan konsultasi profesional untuk membantu UMKM berkembang di platform Jualan Kita dengan strategi yang terukur dan efektif, langsung dari pemilik platform.</p>
+                    <p>Wadah promosi dan jaringan bisnis digital untuk UMKM Situbondo. Membangun ekosistem bisnis yang inklusif dan berdaya saing dengan semangat "Situbondo Naik Kelas".</p>
                 </div>
                 
                 <div class="footer-col fade-in delay-1">
                     <h3>Tautan Cepat</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-chevron-right"></i><a href="https://lenterakarya.github.io/jualan-kita/" target="_blank">Beranda</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="#jualankita">Jualan Kita</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="#testimonials">Testimoni</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#home">Beranda</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#about">Tentang Saya</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#vision">Visi</a></li>
                         <li><i class="fas fa-chevron-right"></i><a href="#contact">Kontak</a></li>
                     </ul>
                 </div>
@@ -1290,7 +1373,7 @@
                     <h3>Hubungi Kami</h3>
                     <div class="footer-links">
                         <div class="contact-info-item"><i class="fas fa-phone"></i> +62 878 6561 4222</div>
-                        <div class="contact-info-item"><i class="fas fa-envelope"></i> konsultasi@lenterakarya.com</div>
+                        <div class="contact-info-item"><i class="fas fa-envelope"></i> lenterakaryasitubondo@gmail.com</div>
                         <div class="contact-info-item"><i class="fas fa-map-marker-alt"></i> Situbondo, Jawa Timur</div>
                         <div class="contact-info-item"><i class="fas fa-clock"></i> Senin-Sabtu, 08.00-17.00</div>
                     </div>
@@ -1298,7 +1381,7 @@
             </div>
             
             <div class="copyright fade-in delay-3">
-                &copy; 2025 Owner Jualan Kita. Semua hak dilindungi. | Dibangun dengan <i class="fas fa-heart" style="color: #e74c3c;"></i> untuk UMKM Indonesia
+                &copy; 2025 Lentera Karya Situbondo. Semua hak dilindungi. | Dibangun dengan <i class="fas fa-heart" style="color: #e74c3c;"></i> untuk UMKM Situbondo
             </div>
         </div>
     </footer>
@@ -1313,6 +1396,9 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
     <script>
         // Mobile Menu Toggle
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -1384,7 +1470,7 @@
             };
             
             // Send to email (using FormSubmit.co or similar service)
-            fetch('https://formsubmit.co/ajax/konsultasi@lenterakarya.com', {
+            fetch('https://formsubmit.co/ajax/lenterakaryasitubondo@gmail.com', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -1420,88 +1506,6 @@
                 successAlert.style.zIndex = '1000';
                 successAlert.style.animation = 'fadeIn 0.5s ease';
                 successAlert.innerHTML = '<i class="fas fa-check-circle"></i> Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.';
-                
-                document.body.appendChild(successAlert);
-                
-                // Remove alert after 5 seconds
-                setTimeout(() => {
-                    successAlert.style.animation = 'fadeOut 0.5s ease';
-                    setTimeout(() => {
-                        document.body.removeChild(successAlert);
-                    }, 500);
-                }, 5000);
-                
-                // Reset form after 2 seconds
-                setTimeout(() => {
-                    this.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 2000);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                submitBtn.innerHTML = '<i class="fas fa-times"></i> Gagal';
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 2000);
-            });
-        });
-
-        // Testimonial form submission with actual email and WhatsApp integration
-        document.getElementById('testimonialForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-            submitBtn.disabled = true;
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('testimonial-name').value,
-                business: document.getElementById('testimonial-business').value,
-                rating: document.getElementById('testimonial-rating').value,
-                message: document.getElementById('testimonial-message').value
-            };
-            
-            // Send to email (using FormSubmit.co or similar service)
-            fetch('https://formsubmit.co/ajax/konsultasi@lenterakarya.com', {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: formData.name,
-                    business: formData.business,
-                    rating: formData.rating,
-                    message: formData.message,
-                    _subject: `Testimoni baru dari ${formData.name}`
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Also send WhatsApp notification
-                const whatsappMessage = `*Testimoni Baru*%0A%0A*Nama:* ${formData.name}%0A*Bisnis:* ${formData.business}%0A*Rating:* ${formData.rating} bintang%0A%0A*Testimoni:*%0A${formData.message}`;
-                window.open(`https://wa.me/6287865614222?text=${whatsappMessage}`, '_blank');
-                
-                // Show success message
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Terkirim!';
-                
-                const successAlert = document.createElement('div');
-                successAlert.style.position = 'fixed';
-                successAlert.style.top = '20px';
-                successAlert.style.right = '20px';
-                successAlert.style.backgroundColor = '#38a169';
-                successAlert.style.color = 'white';
-                successAlert.style.padding = '15px 25px';
-                successAlert.style.borderRadius = '8px';
-                successAlert.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-                successAlert.style.zIndex = '1000';
-                successAlert.style.animation = 'fadeIn 0.5s ease';
-                successAlert.innerHTML = '<i class="fas fa-check-circle"></i> Testimoni Anda telah terkirim! Terima kasih atas masukan Anda.';
                 
                 document.body.appendChild(successAlert);
                 
@@ -1614,6 +1618,113 @@
         });
 
         window.addEventListener('scroll', animateOnScroll);
+        
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
     </script>
 </body>
 </html>
